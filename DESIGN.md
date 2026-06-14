@@ -1,16 +1,16 @@
 ---
 name: RiyazPortfolioTheme
 colors:
-  background: "#030712"       # Deep outer-space grey
-  surface: "#0f172a"          # Rich dark slate
-  card: "rgba(15, 23, 42, 0.6)" # Glassmorphic slate with alpha
-  primary: "#6366f1"          # Vivid Indigo
-  secondary: "#14b8a6"        # Cool Teal
-  accent: "#a855f7"           # Bright Purple
-  border: "rgba(255, 255, 255, 0.08)"
-  text-primary: "#f9fafb"     # High contrast grey-white
-  text-secondary: "#cbd5e1"   # Mid contrast slate-grey
-  text-muted: "#64748b"       # Low contrast slate-grey
+  background: "#fafafa"       # Default: Aurora Light Glass base
+  surface: "rgba(255, 255, 255, 0.65)"
+  card: "rgba(255, 255, 255, 0.65)"
+  primary: "#ec4899"          # Pink/Magenta accent
+  secondary: "#a855f7"        # Purple secondary
+  accent: "#3b82f6"           # Blue highlight
+  border: "rgba(0, 0, 0, 0.08)"
+  text-primary: "#0f172a"     # Slate 900
+  text-secondary: "#334155"   # Slate 800
+  text-muted: "#94a3b8"       # Slate 400
 typography:
   fontFamilyHeader: "'Plus Jakarta Sans', sans-serif"
   fontFamilyBody: "'Inter', sans-serif"
@@ -45,14 +45,15 @@ border-radius:
 
 # Design System & Creative Direction
 
-## Aesthetic Concept: "Cyber-Minimalist Glass"
-An interface that blends high-tech AI engineering with clean, premium design. The interface relies on dark-mode depth, glassmorphism, glowing radial gradients, and subtle vector mesh patterns to feel alive and advanced without compromising readability.
+## Aesthetic Concept: "Aurora & Solar"
+An interface focused on clean, light-mode glassmorphism as the default experience (Aurora), paired with a premium high-contrast dark-mode alternative (Solar).
 
 ## Visual Pillars
-1. **Glassmorphic Cards**: Depth created through `backdrop-filter: blur(16px)`, translucent background alphas, and ultra-thin, light borders (`rgba(255, 255, 255, 0.08)`).
-2. **Radial Lighting**: Ambient glowing orbs positioned in the background that animate slowly, creating organic depth.
-3. **Typography Contrast**: Pairing the bold, geometry of `Plus Jakarta Sans` for headers with the clean, neutral readability of `Inter` for body copy. Code and interactive widgets utilize `JetBrains Mono`.
-4. **Interactive Accents**: Hover states that trigger scale shifts, border color transitions, and glowing drop shadows.
+1. **Glassmorphic Depth**: Subtle backdrop blurring (`backdrop-filter: blur(12px)`) and semi-translucent background fills (`rgba(255, 255, 255, 0.65)` for Aurora, `rgba(28, 25, 23, 0.6)` for Solar).
+2. **Radial Lighting**: Ambient glowing background orbs that shift based on mouse movements to establish organic interaction depth.
+3. **Typography Contrast**: Plus Jakarta Sans geometric headers matched with Inter body copy, plus JetBrains Mono for interactive console output.
+4. **Focused Color Palettes**: Soft pink, purple, and blue gradients in Aurora; high-energy warm orange, rose, and gold in Solar.
+
 
 ## Component Specifications
 - **Interactive Console**: Built to resemble a code IDE/terminal. Font family must be `JetBrains Mono`. Input line has active caret animation. Outputs must be clearly categorized with color codes.
