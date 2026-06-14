@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaikh Riyaz Rajjak - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+        
+        :root {
+            --primary: #1e293b;
+            --primary-light: #475569;
+            --accent: #2563eb;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg);
+            padding: 50px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+        }
+
+        .header-left {
+            max-width: 60%;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            line-height: 1.35;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .contact-info > div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .contact-icon-svg {
+            margin-right: 6px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border);
+            margin: 20px 0;
+        }
+
+        /* Section structure */
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 4px;
+        }
+
+        /* Summary */
+        .summary p {
+            font-size: 14px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        /* Skills Table */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        .skills-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skills-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .skills-table td {
+            padding: 8px 12px;
+            font-size: 13.5px;
+            vertical-align: middle;
+        }
+
+        .skills-table td.category-name {
+            font-weight: 700;
+            color: var(--primary);
+            width: 180px;
+            padding-left: 0;
+        }
+
+        .skills-table td.skills-list {
+            color: var(--text-main);
+            padding-right: 0;
+        }
+
+        /* Experience list */
+        .job {
+            margin-bottom: 20px;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .job-company {
+            font-style: italic;
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+
+        .job-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .job-bullets {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .job-bullets li {
+            font-size: 13.5px;
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+
+        .job-bullets li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Education */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .edu-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .edu-inst {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .edu-year {
+            color: var(--text-muted);
+        }
+
+        /* Print Styling */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+                color: #000;
+            }
+
+            .resume-container {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+
+            /* Prevent page breaks inside jobs */
+            .job {
+                page-break-inside: avoid;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <div class="header-left">
+            <h1>Shaikh Riyaz Rajjak</h1>
+            <div class="subtitle">Senior Software Engineer — AI Agents & API Integrations (10+ Years Exp)</div>
+        </div>
+        <div class="contact-info">
+            <div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Singapore</span>
+            </div>
+            <div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <a href="tel:+6585874804">+65 85874804</a>
+            </div>
+            <div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="mailto:shaikhriyaz434@gmail.com">shaikhriyaz434@gmail.com</a>
+            </div>
+            <div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <a href="https://github.com/shaikhriyaz434" target="_blank">github.com/shaikhriyaz434</a>
+            </div>
+            <div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <a href="https://www.linkedin.com/in/riyaz-shaikh-0548a899" target="_blank">linkedin.com/in/riyaz-shaikh-0548a899</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="summary">
+        <h2>Professional Summary</h2>
+        <p>Dynamic Senior Software Engineer with <strong>10+ years of experience</strong> specializing in API development, gateway migrations, and developer efficiency. Currently driving <strong>Engineering Efficiency</strong> by architecting <strong>AI Agentic workflows</strong> (LangGraph) and building ecosystem tools like an enterprise <strong>plugin marketplace for coding agents</strong> (Antigravity, Claude Code, Copilot). Extensive experience in cloud-native API management (Kong Gateway, Apigee, Mulesoft) and robust Infrastructure as Code (Terraform, AWS).</p>
+    </section>
+
+    <section class="skills">
+        <h2>Core Technical Skills</h2>
+        <table class="skills-table">
+            <tr>
+                <td class="category-name">AI & Agentic Dev</td>
+                <td class="skills-list">LangGraph, Coding Agents (Antigravity, Claude Code, Copilot), LLM Integration, Agentic Workflows, Agent Tool/Plugin Design</td>
+            </tr>
+            <tr>
+                <td class="category-name">API Gateways</td>
+                <td class="skills-list">Kong API Gateway, Google Apigee, MuleSoft Platform, API Security, OpenAPI/Swagger</td>
+            </tr>
+            <tr>
+                <td class="category-name">Backend & Frontend</td>
+                <td class="skills-list">Node.js, Express.js, NestJS, React, Next.js, Java, Spring Boot, GraphQL</td>
+            </tr>
+            <tr>
+                <td class="category-name">Infrastructure & DevOps</td>
+                <td class="skills-list">Terraform, AWS, Docker, Kubernetes, GitHub Actions, GitLab CI/CD</td>
+            </tr>
+            <tr>
+                <td class="category-name">Databases & Messaging</td>
+                <td class="skills-list">PostgreSQL, MongoDB, MySQL, MS SQL, Redis, RabbitMQ</td>
+            </tr>
+            <tr>
+                <td class="category-name">Testing & Quality</td>
+                <td class="skills-list">Jest, Supertest, Mocha, Cucumber</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="experience">
+        <h2>Professional Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Principal Web API Developer (Engineering Efficiency)</span>
+                    <span class="job-company">| MSD International GMBH, Singapore</span>
+                </div>
+                <span class="job-date">Oct 2022 – Present</span>
+            </div>
+            <ul class="job-bullets">
+                <li><strong>Agentic Ecosystem (Plugin Marketplace):</strong> Conceptualized and developed an internal Plugin Marketplace for Coding Agents (Antigravity, Claude Code, Copilot, etc.), enabling teams across the organization to extend agent capabilities and accelerate automated software development workflows.</li>
+                <li><strong>Agentic API Automation:</strong> Built stateful, multi-agent systems using LangGraph to orchestrate API lifecycle tasks such as automated spec linting, contract testing, and security policy compliance.</li>
+                <li><strong>Large-Scale API Migration:</strong> Played a vital role in successfully migrating 200+ APIs from Apigee to the Kong Gateway platform.</li>
+                <li><strong>Platform Management API:</strong> Designed and built the Platform Management API, a mission-critical service responsible for orchestrating, migrating, and managing APIs across the enterprise Gateway infrastructure.</li>
+                <li><strong>Developer Tooling & SDLC:</strong> Built internal API developer tools, boilerplate generators, and CI/CD pipelines (GitHub Actions) to streamline the daily developer experience, standardizing project scaffolding and deployments.</li>
+                <li><strong>Infrastructure as Code:</strong> Leveraged Terraform to manage and provision secure, scalable AWS infrastructure across multi-region environments.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Full-Stack Developer</span>
+                    <span class="job-company">| Credit Agricole CIB, Singapore</span>
+                </div>
+                <span class="job-date">Feb 2022 – Oct 2022</span>
+            </div>
+            <ul class="job-bullets">
+                <li><strong>Microservices Architecture:</strong> Developed a highly scalable Node.js microservices architecture for Project Mitigant to process complex trade data.</li>
+                <li><strong>GraphQL Integration:</strong> Designed and implemented unified GraphQL APIs that simplified front-end data fetching and reduced network overhead by 30%.</li>
+                <li><strong>CI/CD & DevOps:</strong> Established robust CI/CD deployment pipelines using GitLab CI and Docker, automating testing and deploying to AWS EKS.</li>
+                <li><strong>Team Leadership:</strong> Led a team of five developers, organizing sprints, performing code reviews, and mentoring junior engineers.</li>
+            </ul>
+        </div>
+
+        <div class="job" style="page-break-before: always;">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Software Developer</span>
+                    <span class="job-company">| Manulife (GrowthOps Asia), Kuala Lumpur, Malaysia</span>
+                </div>
+                <span class="job-date">Apr 2020 – Feb 2022</span>
+            </div>
+            <ul class="job-bullets">
+                <li><strong>Legacy Modernization:</strong> Refactored Manulife's core Wealth Registry System (WRS) from a monolithic architecture to NestJS/TypeScript microservices, resulting in a 50% performance improvement.</li>
+                <li><strong>API Gateway & Security:</strong> Implemented security configurations, JWT auth, and routing rules on enterprise APIs.</li>
+                <li><strong>Observability:</strong> Integrated Kibana and New Relic dashboards to monitor system health and resolve real-time performance bottlenecks.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Software Developer</span>
+                    <span class="job-company">| Nbytes Technologies, Mumbai, India</span>
+                </div>
+                <span class="job-date">Oct 2019 – Apr 2020</span>
+            </div>
+            <ul class="job-bullets">
+                <li><strong>Mobile Backend:</strong> Developed Express.js backend services and PostgreSQL schemas for the SPOT IT smart parking app.</li>
+                <li><strong>Cross-Platform Dev:</strong> Led Flutter mobile app development for iOS & Android, integrating Google/Apple Maps APIs and push notifications.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Software Developer</span>
+                    <span class="job-company">| SD Global Technologies, Kuala Lumpur, Malaysia</span>
+                </div>
+                <span class="job-date">Apr 2017 – Oct 2019</span>
+            </div>
+            <ul class="job-bullets">
+                <li><strong>System Architecture:</strong> Designed and implemented core modules for the Clinicare EMR system (Express.js, RabbitMQ, Angular).</li>
+                <li><strong>Scrum & Delivery:</strong> Managed API design and delivery in a Scrum environment, coordinating cross-team integrations.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Software Developer</span>
+                    <span class="job-company">| SOFOMO Embedded Solutions, Pune, India</span>
+                </div>
+                <span class="job-date">Jun 2015 – Apr 2017</span>
+            </div>
+            <ul class="job-bullets">
+                <li>Developed full-stack web platforms and Android apps, successfully transitioning from Android to backend Node.js development.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="certifications">
+        <h2>Certifications</h2>
+        <div class="edu-item">
+            <div>
+                <span class="edu-name">Introduction to Agent Skills</span>
+                <span class="edu-inst">| Anthropic</span>
+            </div>
+            <span class="edu-year"><a href="https://verify.skilljar.com/c/iassd5xqsckr" target="_blank">Verify Credential</a></span>
+        </div>
+        <div class="edu-item">
+            <div>
+                <span class="edu-name">Microsoft Technology Associate: Web Development Fundamentals</span>
+                <span class="edu-inst">| Microsoft (ID: 285MA4-FF5521)</span>
+            </div>
+            <span class="edu-year">2015</span>
+        </div>
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <div class="edu-item">
+            <div>
+                <span class="edu-name">B.E. in Computer Engineering</span>
+                <span class="edu-inst">| Pune University, India</span>
+            </div>
+            <span class="edu-year">2012 – 2015</span>
+        </div>
+        <div class="edu-item">
+            <div>
+                <span class="edu-name">Diploma in Computer Engineering</span>
+                <span class="edu-inst">| MSBTE, India</span>
+            </div>
+            <span class="edu-year">2009 – 2012</span>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
