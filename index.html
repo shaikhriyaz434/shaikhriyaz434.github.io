@@ -181,6 +181,65 @@
             color: var(--primary);
         }
 
+        /* Mobile Responsive Nav Toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            padding: 8px;
+            z-index: 101;
+        }
+
+        .nav-toggle span {
+            width: 22px;
+            height: 2px;
+            background-color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                height: 100vh;
+                background: var(--bg-base);
+                border-left: 1px solid var(--border-color);
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px 24px;
+                gap: 24px;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+                z-index: 100;
+            }
+
+            .nav-links.open {
+                transform: translateX(0);
+            }
+        }
+
         /* Theme Configurator */
         .theme-selector {
             display: flex;
@@ -232,6 +291,31 @@
             }
             .hero-badge, .hero-actions {
                 justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 110px 0 50px 0;
+            }
+            .hero-title {
+                font-size: clamp(2.0rem, 8vw, 3.2rem);
+            }
+            .hero-desc {
+                font-size: 1rem;
+            }
+            .terminal {
+                height: 420px;
+            }
+            .contact-box {
+                padding: 32px 16px;
+            }
+            .contact-box h3 {
+                font-size: 2rem;
+            }
+            .contact-social-btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
             }
         }
 
@@ -561,6 +645,18 @@
             .timeline-grid {
                 grid-template-columns: 1fr;
             }
+            .timeline-detail-panel {
+                display: none !important;
+            }
+            .mobile-details {
+                display: block;
+                animation: slideDown 0.3s ease-out;
+            }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .timeline-cards-flow {
@@ -710,7 +806,7 @@
         /* Certs & Edu Grid */
         .edu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
 
@@ -828,6 +924,11 @@
     <nav>
         <div class="container nav-container">
             <a href="#" class="logo">RIYAZ<span>.SHAIKH</span></a>
+            <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -1262,7 +1363,6 @@
         ];
 
         function loadJob(index, el) {
-            const detailCard = document.getElementById('detail-card-content');
             const job = jobs[index];
             
             // Update selected indicator active state
@@ -1270,25 +1370,68 @@
             wrappers.forEach(w => w.classList.remove('active'));
             el.classList.add('active');
 
-            // Set content with simple anim
-            detailCard.style.opacity = '0';
-            setTimeout(() => {
+            if (window.innerWidth <= 900) {
+                // Mobile: display bullets inline inside the clicked card
+                // Remove any existing mobile-details from other cards
+                const existingDetails = document.querySelectorAll('.mobile-details');
+                existingDetails.forEach(d => d.remove());
+
+                // Create mobile-details container inside the clicked card's mini-card
+                const miniCard = el.querySelector('.timeline-mini-card');
+                const detailsDiv = document.createElement('div');
+                detailsDiv.className = 'mobile-details';
+                
                 let bulletsHtml = job.bullets.map(b => `<li>${b}</li>`).join('');
-                detailCard.innerHTML = `
-                    <div class="detail-meta-row">
-                        <div>
-                            <h3 class="detail-role">${job.role}</h3>
-                            <span class="detail-company">${job.company}</span>
-                        </div>
-                        <span class="detail-date">${job.date}</span>
-                    </div>
-                    <ul class="detail-bullets">
+                detailsDiv.innerHTML = `
+                    <ul class="detail-bullets" style="margin-top: 16px; border-top: 1px solid var(--border-color); padding-top: 12px; list-style: none;">
                         ${bulletsHtml}
                     </ul>
                 `;
-                detailCard.style.opacity = '1';
-            }, 150);
+                miniCard.appendChild(detailsDiv);
+            } else {
+                // Desktop: display details in the right side panel
+                const detailCard = document.getElementById('detail-card-content');
+                detailCard.style.opacity = '0';
+                setTimeout(() => {
+                    let bulletsHtml = job.bullets.map(b => `<li>${b}</li>`).join('');
+                    detailCard.innerHTML = `
+                        <div class="detail-meta-row">
+                            <div>
+                                <h3 class="detail-role">${job.role}</h3>
+                                <span class="detail-company">${job.company}</span>
+                            </div>
+                            <span class="detail-date">${job.date}</span>
+                        </div>
+                        <ul class="detail-bullets">
+                            ${bulletsHtml}
+                        </ul>
+                    `;
+                    detailCard.style.opacity = '1';
+                }, 150);
+            }
         }
+
+        // Initialize desktop details panel on load
+        if (window.innerWidth > 900) {
+            loadJob(0, document.querySelector('.timeline-card-wrapper'));
+        }
+
+        // Mobile Hamburger Menu script
+        const navToggleBtn = document.getElementById('nav-toggle-btn');
+        const navLinksList = document.querySelector('.nav-links');
+
+        navToggleBtn.addEventListener('click', () => {
+            navToggleBtn.classList.toggle('open');
+            navLinksList.classList.toggle('open');
+        });
+
+        // Close menu on click of nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggleBtn.classList.remove('open');
+                navLinksList.classList.remove('open');
+            });
+        });
 
         // Terminal Interactive console Logic
         const termScreen = document.getElementById('term-screen');
