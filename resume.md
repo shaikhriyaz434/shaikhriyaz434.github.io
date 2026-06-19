@@ -1,17 +1,17 @@
 # SHAIKH RIYAZ RAJJAK
-**Senior Software Engineer — AI Agents & API Integrations (10+ Years Exp)**  
-Singapore | +65 85874804 | [shaikhriyaz434@gmail.com](mailto:shaikhriyaz434@gmail.com) | [GitHub](https://github.com/shaikhriyaz434) | [LinkedIn](https://www.linkedin.com/in/riyaz-shaikh-0548a899)
+**Senior Software Engineer — AI Agents & API Integrations (11 Years Exp)**  
+Singapore | +65 85874804 | [shaikhriyaz434@gmail.com](mailto:shaikhriyaz434@gmail.com) | [Website](https://shaikhriyaz434.github.io/) | [GitHub](https://github.com/shaikhriyaz434) | [LinkedIn](https://www.linkedin.com/in/riyaz-shaikh-0548a899)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Dynamic Senior Software Engineer with **10+ years of experience** specializing in API development, gateway migrations, and developer efficiency. Currently driving **Engineering Efficiency** by architecting **AI Agentic workflows** (LangGraph) and building ecosystem tools like an enterprise **plugin marketplace for coding agents** (Antigravity, Claude Code, Copilot). Extensive experience in cloud-native API management (Kong Gateway, Apigee, Mulesoft) and robust Infrastructure as Code (Terraform, AWS).
+Dynamic Senior Software Engineer with **11 years of experience** specializing in API development, gateway migrations, and developer efficiency. Currently driving **Engineering Efficiency** by architecting **AI Agentic workflows** (LangGraph) and building ecosystem tools like an enterprise **plugin marketplace for coding agents** (Antigravity, Claude Code, Copilot). Extensive experience in cloud-native API management (Kong Gateway, Apigee, Mulesoft) and robust Infrastructure as Code (Terraform, AWS).
 
 ---
 
 ## CORE TECHNICAL SKILLS
 
-*   **AI & Agentic Development:** LangGraph, Coding Agents (Antigravity, Claude Code, GitHub Copilot), LLM Integration, Agentic Workflows, Agent Tool/Plugin Design.
+*   **AI & Agentic Development:** LangGraph, Agentic RAG, Coding Agents (Antigravity, Claude Code, GitHub Copilot), LLM Integration, Agentic Workflows, Agent Tool/Plugin Design.
 *   **API Management & Gateways:** Kong API Gateway, Google Apigee, MuleSoft Platform, API Security, Rate Limiting, OpenAPI/Swagger.
 *   **Infrastructure & DevOps:** Terraform, AWS, Docker, Kubernetes, GitHub Actions, GitLab CI/CD, Git.
 *   **Backend & Frontend Frameworks:** Node.js, Express.js, NestJS, React, Next.js, Java, Spring Boot, RESTful APIs, GraphQL.
@@ -26,6 +26,7 @@ Dynamic Senior Software Engineer with **10+ years of experience** specializing i
 **Oct 2022 – Present**
 *   **Agentic Ecosystem (Plugin Marketplace):** Conceptualized and developed an internal **Plugin Marketplace for Coding Agents** (Antigravity, Claude Code, Copilot, etc.), enabling teams across the organization to extend agent capabilities and accelerate automated software development workflows.
 *   **Agentic API Automation:** Built stateful, multi-agent systems using **LangGraph** to orchestrate API lifecycle tasks such as automated spec linting, contract testing, and security policy compliance.
+*   **Agentic RAG Integration:** Implemented retrieval-augmented generation pipelines using vector search routing and self-correction to improve agent context retrieval and documentation search accuracy.
 *   **Large-Scale API Migration:** Played a vital role in successfully migrating **200+ APIs from Apigee to the Kong Gateway** platform.
 *   **Platform Management API:** Designed and built the **Platform Management API**, a mission-critical service responsible for orchestrating, migrating, and managing APIs across the enterprise Gateway infrastructure.
 *   **Developer Tooling & SDLC:** Built internal API developer tools, boilerplate generators, and CI/CD pipelines (**GitHub Actions**) to streamline the daily developer experience, standardizing project scaffolding and deployments.
@@ -62,8 +63,10 @@ Dynamic Senior Software Engineer with **10+ years of experience** specializing i
 
 ## CERTIFICATIONS
 
+*   **Introduction to subagents** | Anthropic (2026) — [Credential Verification](https://verify.skilljar.com/c/kt8z3whrabnn)
 *   **Introduction to Agent Skills** | Anthropic (2026) — [Credential Verification](https://verify.skilljar.com/c/iassd5xqsckr)
 *   **Microsoft Technology Associate: Web Development Fundamentals** | Microsoft (2015) — Credential ID: 285MA4-FF5521
+
 
 ---
 

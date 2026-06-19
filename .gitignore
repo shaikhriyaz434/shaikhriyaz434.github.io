@@ -2,3 +2,6 @@
 Thumbs.db
 .gemini/
 *.log
+.agents/
+.impeccable/
+

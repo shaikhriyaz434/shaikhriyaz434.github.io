@@ -2,7 +2,7 @@
 
 Welcome to the repository for my personal website and resume. 
 
-Live Website: [https://shaikhriyaz434.github.io/riyaz-shaikh/](https://shaikhriyaz434.github.io/riyaz-shaikh/)
+Live Website: [https://shaikhriyaz434.github.io/](https://shaikhriyaz434.github.io/)
 
 ## Key Features
 

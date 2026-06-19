@@ -12,7 +12,7 @@
             --primary-light: #475569;
             --accent: #2563eb;
             --text-main: #334155;
-            --text-muted: #64748b;
+            --text-muted: #556677;
             --bg: #ffffff;
             --border: #e2e8f0;
         }
@@ -247,6 +247,80 @@
             color: var(--text-muted);
         }
 
+        /* Mobile Responsive Styling */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+                background-color: #f1f5f9;
+            }
+
+            .resume-container {
+                padding: 24px 16px;
+                box-shadow: none;
+                border: none;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+                text-align: center;
+                border-bottom-width: 1px;
+            }
+
+            .header-left {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .subtitle {
+                margin-top: 4px;
+            }
+
+            .contact-info {
+                align-items: stretch;
+                text-align: left;
+                width: 100%;
+                gap: 6px;
+            }
+
+            .contact-info > div {
+                justify-content: flex-start;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+
+            .edu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+
+            .skills-table tr {
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid var(--border);
+                padding: 8px 0;
+            }
+
+            .skills-table tr:last-child {
+                border-bottom: none;
+            }
+
+            .skills-table td {
+                padding: 2px 0;
+            }
+
+            .skills-table td.category-name {
+                width: 100%;
+                padding-bottom: 2px;
+            }
+        }
+
         /* Print Styling */
         @media print {
             body {
@@ -284,7 +358,7 @@
     <header>
         <div class="header-left">
             <h1>Shaikh Riyaz Rajjak</h1>
-            <div class="subtitle">Senior Software Engineer — AI Agents & API Integrations (10+ Years Exp)</div>
+            <div class="subtitle">Senior Software Engineer — AI Agents & API Integrations (11 Years Exp)</div>
         </div>
         <div class="contact-info">
             <div>
@@ -300,6 +374,10 @@
                 <a href="mailto:shaikhriyaz434@gmail.com">shaikhriyaz434@gmail.com</a>
             </div>
             <div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-svg"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <a href="https://shaikhriyaz434.github.io/" target="_blank">shaikhriyaz434.github.io</a>
+            </div>
+            <div>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon-svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 <a href="https://github.com/shaikhriyaz434" target="_blank">github.com/shaikhriyaz434</a>
             </div>
@@ -312,7 +390,7 @@
 
     <section class="summary">
         <h2>Professional Summary</h2>
-        <p>Dynamic Senior Software Engineer with <strong>10+ years of experience</strong> specializing in API development, gateway migrations, and developer efficiency. Currently driving <strong>Engineering Efficiency</strong> by architecting <strong>AI Agentic workflows</strong> (LangGraph) and building ecosystem tools like an enterprise <strong>plugin marketplace for coding agents</strong> (Antigravity, Claude Code, Copilot). Extensive experience in cloud-native API management (Kong Gateway, Apigee, Mulesoft) and robust Infrastructure as Code (Terraform, AWS).</p>
+        <p>Dynamic Senior Software Engineer with <strong>11 years of experience</strong> specializing in API development, gateway migrations, and developer efficiency. Currently driving <strong>Engineering Efficiency</strong> by architecting <strong>AI Agentic workflows</strong> (LangGraph) and building ecosystem tools like an enterprise <strong>plugin marketplace for coding agents</strong> (Antigravity, Claude Code, Copilot). Extensive experience in cloud-native API management (Kong Gateway, Apigee, Mulesoft) and robust Infrastructure as Code (Terraform, AWS).</p>
     </section>
 
     <section class="skills">
@@ -320,7 +398,7 @@
         <table class="skills-table">
             <tr>
                 <td class="category-name">AI & Agentic Dev</td>
-                <td class="skills-list">LangGraph, Coding Agents (Antigravity, Claude Code, Copilot), LLM Integration, Agentic Workflows, Agent Tool/Plugin Design</td>
+                <td class="skills-list">LangGraph, Agentic RAG, Coding Agents (Antigravity, Claude Code, Copilot), LLM Integration, Agentic Workflows, Agent Tool/Plugin Design</td>
             </tr>
             <tr>
                 <td class="category-name">API Gateways</td>
@@ -359,6 +437,7 @@
             <ul class="job-bullets">
                 <li><strong>Agentic Ecosystem (Plugin Marketplace):</strong> Conceptualized and developed an internal Plugin Marketplace for Coding Agents (Antigravity, Claude Code, Copilot, etc.), enabling teams across the organization to extend agent capabilities and accelerate automated software development workflows.</li>
                 <li><strong>Agentic API Automation:</strong> Built stateful, multi-agent systems using LangGraph to orchestrate API lifecycle tasks such as automated spec linting, contract testing, and security policy compliance.</li>
+                <li><strong>Agentic RAG Integration:</strong> Implemented retrieval-augmented generation pipelines using vector search routing and self-correction to improve agent context retrieval and documentation search accuracy.</li>
                 <li><strong>Large-Scale API Migration:</strong> Played a vital role in successfully migrating 200+ APIs from Apigee to the Kong Gateway platform.</li>
                 <li><strong>Platform Management API:</strong> Designed and built the Platform Management API, a mission-critical service responsible for orchestrating, migrating, and managing APIs across the enterprise Gateway infrastructure.</li>
                 <li><strong>Developer Tooling & SDLC:</strong> Built internal API developer tools, boilerplate generators, and CI/CD pipelines (GitHub Actions) to streamline the daily developer experience, standardizing project scaffolding and deployments.</li>
@@ -443,6 +522,13 @@
         <h2>Certifications</h2>
         <div class="edu-item">
             <div>
+                <span class="edu-name">Introduction to subagents</span>
+                <span class="edu-inst">| Anthropic</span>
+            </div>
+            <span class="edu-year"><a href="https://verify.skilljar.com/c/kt8z3whrabnn" target="_blank">Verify Credential</a></span>
+        </div>
+        <div class="edu-item">
+            <div>
                 <span class="edu-name">Introduction to Agent Skills</span>
                 <span class="edu-inst">| Anthropic</span>
             </div>
@@ -476,5 +562,8 @@
     </section>
 </div>
 
+<!-- impeccable-live-start -->
+<script src="http://localhost:8400/live.js"></script>
+<!-- impeccable-live-end -->
 </body>
 </html>
