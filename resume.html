@@ -248,7 +248,7 @@
         }
 
         /* Mobile Responsive Styling */
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
             body {
                 padding: 15px 10px;
                 background-color: #f1f5f9;
@@ -341,11 +341,7 @@
                 margin: 15mm;
             }
 
-            /* Prevent page breaks inside jobs */
-            .job {
-                page-break-inside: avoid;
-            }
-
+            /* Prevent page breaks after headers */
             h2 {
                 page-break-after: avoid;
             }
